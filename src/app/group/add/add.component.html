@@ -1,0 +1,46 @@
+<app-dashboard></app-dashboard>
+
+      <table class="table">
+        <thead class=" text-primary">
+
+        </thead>
+        <tbody>
+          <tr class="no-underline">
+            <td colspan="2" style="text-align: center;">
+              <h4>Create Group</h4>
+            </td>
+          </tr>
+          <tr class="no-underline">
+            <td>
+              Group name:
+            </td>
+            <td>
+              <input class="form-control" type="text" [(ngModel)]="groupName">
+            </td>
+          </tr>
+          <tr class="no-underline">
+            <td>
+              Add Friend:
+            </td>
+            <td>
+              <ng-select [items]="this.friendList"
+               bindLabel="firstName"
+               placeholder="Select Friend"
+               appendTo="body"
+               [multiple]="true"
+               [(ngModel)]="users">
+            </ng-select>
+
+            </td>
+          </tr>
+          <tr class="no-underline">
+            <td>
+              <input type="button" class="btn btn-primary" (click)="addGroup()" value="Save Changes">
+              <span>&nbsp;&nbsp;</span>
+              <input type="reset" class="btn btn-default" value="Cancel" [routerLink]="['/group/list']">
+
+            </td>
+          </tr>
+
+        </tbody>
+      </table>

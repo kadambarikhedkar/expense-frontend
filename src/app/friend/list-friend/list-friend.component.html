@@ -1,0 +1,38 @@
+<app-dashboard></app-dashboard>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Friends</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>
+                Name
+              </th>
+              <th>
+                Email Id
+              </th>
+              
+            </thead>
+            <tbody>
+              <tr *ngFor="let friend of this.friendList">
+                <td>
+                  {{friend.firstName}}
+                </td>
+                <td>
+                  {{friend.email}}
+                </td>
+                
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

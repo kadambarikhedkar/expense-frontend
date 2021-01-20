@@ -1,0 +1,109 @@
+<app-dashboard></app-dashboard>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> {{this.expenseDetail.expenseName}}</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+             
+              <th>
+                Amount
+              </th>
+              <th>
+                Paid By
+              </th>
+             
+            </thead>
+            <tbody>
+              <tr>
+               
+                <td>
+                  {{this.expenseDetail.amount}}
+                </td>
+                <td>
+                    {{this.paidByDetail.firstName}}
+                  </td>
+               
+              </tr>
+              
+            </tbody>
+          </table>
+          <div class="card-header">
+            <h4 class="card-title">Expense Pay</h4>
+          </div>
+          <table class="table">
+            <thead class=" text-primary">
+             
+              <th>
+                Pay By
+              </th>
+              <th>
+                Pay To
+              </th>
+              <th>
+                Amount
+              </th>
+             
+            </thead>
+            <tbody >
+              <tr *ngFor="let pay of this.userPay">
+                <td>
+                  {{pay.payBy}}
+
+                </td>
+                <td>
+                  {{this.paidByDetail.firstName}}
+                </td>
+               <td>
+                {{pay.amount}}
+               </td>
+                
+               
+              </tr>
+              
+            </tbody>
+          </table>
+
+          <div class="card-header">
+            <h4 class="card-title">Expense History</h4>
+          </div>
+          <table class="table">
+            <thead class=" text-primary">
+             
+              <th>
+                Action
+              </th>
+              <th>
+               Done By
+              </th>
+              <th>
+                Time
+              </th>
+             
+            </thead>
+            <tbody >
+              <tr *ngFor="let name of this.nameArray">
+               <td>
+                {{name.action}}
+               </td>
+                <td>
+                 {{name.doneBy}}
+                </td>
+                <td>
+                    {{name.time}}
+                  </td>
+               
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

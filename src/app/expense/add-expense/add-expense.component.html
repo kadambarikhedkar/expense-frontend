@@ -1,0 +1,82 @@
+<app-dashboard></app-dashboard>
+
+      <table class="table">
+        <thead class=" text-primary">
+
+        </thead>
+        <tbody>
+          <tr class="no-underline">
+            <td colspan="2" style="text-align: center;">
+              <h4>Create Expense</h4>
+            </td>
+          </tr>
+          <tr class="no-underline">
+            <td>
+              Name:
+            </td>
+            <td>
+              <input class="form-control" type="text" [(ngModel)]="expenseName">
+            </td>
+          </tr>
+          <tr class="no-underline">
+            <td>
+              Add Group:
+            </td>
+            <td>
+              <select class="form-control"
+              *ngIf="this.groupList" [value]="selectedGroups" (change)="getFriendList($event.target.value)" [(ngModel)]="groups">
+   <option [value]="0" disabled>Select Group</option>
+   <option *ngFor="let group of this.groupList" [value]="group._id">{{group.groupName}}</option>
+
+            </select>
+
+            </td>
+          </tr>
+          <tr class="no-underline">
+            <td>
+              Amount:
+            </td>
+            <td>
+              <input class="form-control" type="text" [(ngModel)]="amount">
+            </td>
+          </tr>
+          <tr class="no-underline">
+            <td>
+              Friends:
+            </td>
+            <td >
+              <select class="form-control" multiple="true" [(ngModel)]="users"
+              *ngIf="this.nameArray">
+   <option [value]="0" disabled>Select Friends</option>
+   <option *ngFor="let user of this.nameArray" [value]="user[0]._id">{{user[0].firstName}}</option>
+
+            </select>
+              
+            </td>
+  
+            </tr>
+            <tr class="no-underline">
+                <td>
+                  Paid By:
+                </td>
+                <td>
+                  <select class="form-control" [(ngModel)]="paidBy"
+                  *ngIf="this.nameArray">
+       <option [value]="0" disabled>Select Friends</option>
+       <option *ngFor="let user of this.paidByArray" [value]="user[0]._id">{{user[0].firstName}}</option>
+
+                </select>
+      
+                  </td>
+          </tr>
+          <tr class="no-underline">
+            <td>
+              <input type="button" class="btn btn-primary" (click)="addExpense()" value="Save Changes">
+              <span>&nbsp;&nbsp;</span>
+              <input type="reset" class="btn btn-default" value="Cancel" [routerLink]="['/expense/list']">
+
+            </td>
+          </tr>
+
+        </tbody>
+      </table>

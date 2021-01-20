@@ -1,0 +1,42 @@
+<app-dashboard></app-dashboard>
+
+      <table class="table">
+        <thead class=" text-primary">
+
+        </thead>
+        <tbody>
+          <tr class="no-underline">
+            <td colspan="2" style="text-align: center;">
+              <h4>Add Friend</h4>
+            </td>
+          </tr>
+          <tr class="no-underline">
+            <td>
+              Name:
+            </td>
+            <td>
+              <input class="form-control" type="text" [(ngModel)]="friendName">
+            </td>
+          </tr>
+          <tr class="no-underline">
+            <td>
+             Email Id:
+            </td>
+            <td>
+              <input class="form-control" type="text" [(ngModel)]="emailId">
+            </td>
+          </tr>
+          <tr class="no-underline">
+            <td>
+              <input type="button" class="btn btn-primary" (click)="addUser()" value="Save Changes">
+              <span>&nbsp;&nbsp;</span>
+              <input type="reset" class="btn btn-default" value="Cancel" [routerLink]="['/friend/list']">
+
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+

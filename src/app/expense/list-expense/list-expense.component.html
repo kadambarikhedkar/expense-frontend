@@ -1,0 +1,52 @@
+<app-dashboard></app-dashboard>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Expense</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>
+                Expense Name
+              </th>
+              <th>
+                Amount
+              </th>
+              <th>
+                Paid By
+              </th>
+              <th>
+               Action
+              </th>
+             
+            </thead>
+            <tbody>
+              <tr *ngFor="let expense of this.expenseList">
+                <td>
+                  <a [routerLink]="['/expense/view',expense.expenseId]">{{expense.expenseName}}</a>
+                </td>
+                <td>
+                  {{expense.amount}}
+                </td>
+                <td>
+                    {{this.paidByDetail.firstName}}
+                  </td>
+                  <td>
+                    <input type="button" class="btn btn-primary" [routerLink]="['/expense/edit/',expense.expenseId]" value="Edit">
+                    <span>&nbsp;&nbsp;</span>
+                    <input type="button" class="btn btn-primary" value="Delete" (click)="deleteExpense(expense.expenseId)">
+      
+                  </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
