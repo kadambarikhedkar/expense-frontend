@@ -13,7 +13,7 @@ import { HttpErrorResponse, HttpParams } from "@angular/common/http";
   providedIn: 'root'
 })
 export class ExpensesService {
-  private url =  'http://localhost:3000';
+  private url =  'http://13.127.244.156:3000';
 
   constructor(public http: HttpClient
     ) { }
